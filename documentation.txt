@@ -1,0 +1,43 @@
+Description du Modèle de Détection d'Erreurs
+Le modèle de détection d'erreurs est une application GUI (Interface Utilisateur Graphique) qui permet de charger deux images, de détecter les différences entre ces images, d'annoter les erreurs détectées, d'afficher les résultats et de sauvegarder les résultats dans un fichier JSON. Il utilise la bibliothèque OpenCV pour le traitement d'image, tkinter pour l'interface graphique, et PIL pour la manipulation d'images.
+
+Fonctionnement du Modèle
+Chargement des Images :
+
+L'utilisateur peut charger deux images en utilisant le bouton "Load Images".
+Les images sont affichées dans deux labels séparés sur l'interface.
+Détection des Différences :
+
+Lorsque l'utilisateur clique sur "Start the model", le modèle compare les deux images pour détecter les différences.
+Il convertit d'abord les images en niveaux de gris pour simplifier la comparaison.
+En utilisant cv2.absdiff(), il trouve les différences pixel par pixel entre les images.
+Les différences sont ensuite converties en une image avec les contours des erreurs détectées.
+Annotation des Erreurs :
+
+Le modèle trouve les contours des erreurs détectées en utilisant cv2.findContours().
+Pour chaque contour, il dessine un rectangle autour de l'erreur sur l'image de sortie.
+Affichage des Résultats :
+
+L'image annotée avec les erreurs est affichée dans un label sur l'interface.
+Les types d'erreurs détectées sont affichés dans une zone de texte sous forme de liste.
+Sauvegarde des Résultats en JSON :
+
+L'utilisateur peut cliquer sur "Save Detection in JSON" pour sauvegarder les résultats dans un fichier JSON.
+Chaque enregistrement de détection contient un horodatage et la liste des types d'erreurs détectées.
+Fonctionnement de l'Application
+Chargement des Images :
+
+L'utilisateur clique sur "Load Images" et sélectionne deux images à comparer.
+Démarre le Modèle :
+
+Une fois les images chargées, l'utilisateur clique sur "Start the model" pour lancer la détection.
+Les différences entre les images sont détectées et les erreurs sont annotées.
+Affichage des Résultats :
+
+L'image annotée avec les erreurs est affichée à l'écran.
+Les types d'erreurs détectées sont affichés dans la zone de texte.
+Sauvegarde en JSON :
+
+Si l'utilisateur souhaite sauvegarder les résultats, il clique sur "Save Detection in JSON".
+Un fichier JSON est créé avec les résultats de détection, chaque enregistrement contenant l'horodatage et les types d'erreurs.
+Ce modèle fournit ainsi une interface conviviale pour charger, comparer et analyser les différences entre deux images, facilitant ainsi la détection d'erreurs dans des images similaires.

@@ -1,0 +1,31 @@
+[
+    {
+        "timestamp": 1711484493103,
+        "errors": [
+            "Minor Error detected at coordinates: (45, 249), Size: (1x1)",
+            "Minor Error detected at coordinates: (34, 249), Size: (1x1)",
+            "Minor Error detected at coordinates: (29, 249), Size: (4x1)",
+            "Minor Error detected at coordinates: (24, 249), Size: (1x1)",
+            "Minor Error detected at coordinates: (11, 249), Size: (9x1)",
+            "Moderate Error detected at coordinates: (53, 248), Size: (38x2)",
+            "Major Error detected at coordinates: (23, 217), Size: (46x8)",
+            "Minor Error detected at coordinates: (70, 209), Size: (8x5)",
+            "Major Error detected at coordinates: (15, 209), Size: (54x8)",
+            "Minor Error detected at coordinates: (53, 188), Size: (9x4)",
+            "Major Error detected at coordinates: (21, 176), Size: (51x21)",
+            "Major Error detected at coordinates: (11, 149), Size: (73x23)",
+            "Major Error detected at coordinates: (26, 124), Size: (44x20)",
+            "Minor Error detected at coordinates: (35, 124), Size: (5x4)",
+            "Moderate Error detected at coordinates: (32, 118), Size: (30x5)",
+            "Major Error detected at coordinates: (29, 110), Size: (42x5)",
+            "Major Error detected at coordinates: (24, 93), Size: (51x16)",
+            "Moderate Error detected at coordinates: (34, 87), Size: (32x5)",
+            "Major Error detected at coordinates: (19, 49), Size: (65x22)",
+            "Moderate Error detected at coordinates: (17, 20), Size: (27x4)",
+            "Minor Error detected at coordinates: (84, 19), Size: (2x3)",
+            "Minor Error detected at coordinates: (86, 14), Size: (2x3)",
+            "Moderate Error detected at coordinates: (18, 14), Size: (28x5)",
+            "Minor Error detected at coordinates: (47, 0), Size: (1x1)"
+        ]
+    }
+]

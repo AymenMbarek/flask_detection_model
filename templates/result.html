@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+        .result-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .result-container img {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+        .error-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .error-item {
+            margin-bottom: 10px;
+        }
+        .error-item h3 {
+            color: limegreen;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h1>Results</h1>
+        <h2>Original Image</h2>
+        <img src="{{ url_for('static', filename=img1) }}" alt="Original Image">
+        <h2>Error Image</h2>
+        <img src="{{ url_for('static', filename=img2) }}" alt="Error Image">
+        <h2>Marked Differences</h2>
+        <img src="data:image/jpeg;base64,{{ marked_img }}" alt="Marked Differences">
+        <h2>Error Types Detected:</h2>
+        <ul class="error-list">
+            {% for error in error_types %}
+            <li class="error-item">
+                <h3>{{ error.type }}</h3>
+                <p>Detected at coordinates: {{ error.coordinates }}, Size: {{ error.size }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+        <form id="saveJsonForm" action="/save_json" method="post">
+            <input type="hidden" name="results" id="results">
+            <input type="button" value="Save Detection in JSON" onclick="saveJson()">
+        </form>
+    </div>
+
+    <script>
+        function saveJson() {
+            var results = JSON.parse('{{ error_types|tojson|safe }}');
+            document.getElementById("results").value = JSON.stringify(results);
+            document.getElementById("saveJsonForm").submit();
+        }
+    </script>
+</body>
+</html>
